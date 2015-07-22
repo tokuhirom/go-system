@@ -1,9 +1,11 @@
-package main
+package system
 
 import (
-	"system"
+	"testing"
 )
 
-func main() {
-	println(system.System("ls"))
+func TestSimple(t *testing.T) {
+	if System("ls system_test.go") != 0 {
+		t.Fail()
+	}
 }
