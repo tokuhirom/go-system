@@ -1,9 +1,9 @@
 package main
+
 import (
-    "system";
-);
+	"system"
+)
 
 func main() {
-    println(system.System("ls"));
+	println(system.System("ls"))
 }
-
