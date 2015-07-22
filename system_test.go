@@ -1,9 +1,7 @@
-package main
+package system
 
-import (
-	"system"
-)
+import "testing"
 
-func main() {
-	println(system.System("ls"))
+func TestSystem(t *testing.T) {
+	println(System("ls"))
 }
