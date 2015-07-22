@@ -1,10 +1,13 @@
 package system
 
 // #include <stdlib.h>
+import "C"
 import (
-	"C"
+	"unsafe"
 )
 
 func System(cmd string) int {
-	return int(C.system(C.CString(cmd)))
+	ptr := C.CString(cmd)
+	defer C.free(unsafe.Pointer(ptr))
+	return int(C.system(ptr))
 }
